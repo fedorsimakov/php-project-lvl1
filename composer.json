@@ -1,10 +1,14 @@
 {
     "name": "hexlet/code",
+    "description": "first study project",
     "authors": [
         {
             "name": "fedorsimakov",
             "email": "fedor.simakov.a@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "bin": [
+	"bin/brain-games"
+    ]
 }
