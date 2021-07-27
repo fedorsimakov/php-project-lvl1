@@ -7,8 +7,16 @@
             "email": "fedor.simakov.a@gmail.com"
         }
     ],
-    "require": {},
+    "license": "UNLICENSE",
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.13"
+    },
     "bin": [
-	"bin/brain-games"
-    ]
+	    "bin/brain-games"
+    ],
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    }
 }
