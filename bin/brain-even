@@ -1,10 +1,10 @@
 #!/usr/bin/env php
 <?php
 
-namespace Brain\Games\Cli;
-
 require __DIR__ . '/../vendor/autoload.php';
 
 use Brain\Games\Cli;
+use Brain\Games\Even;
 
-Cli\brainGames();
+$name = Cli\welcomeToGames();
+Even\startGame($name);
