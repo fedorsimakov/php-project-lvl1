@@ -6,6 +6,7 @@ use Brain\Games\Games\Even;
 use Brain\Games\Games\Calc;
 use Brain\Games\Games\Gcd;
 use Brain\Games\Games\Progression;
+use Brain\Games\Games\Prime;
 
 use function cli\line;
 
@@ -25,6 +26,9 @@ function startGame($name, $game, $question)
                 break;
             case 'progression':
                 $result = Progression\game($name);
+                break;
+            case 'prime':
+                $result = Prime\game($name);
                 break;
         }
         if ($result['answer'] !== $result['correctAnswer']) {
