@@ -4,6 +4,7 @@ namespace Brain\Games\Games\Engine;
 
 use Brain\Games\Games\Even;
 use Brain\Games\Games\Calc;
+use Brain\Games\Games\Gcd;
 
 use function cli\line;
 
@@ -17,6 +18,9 @@ function startGame($name, $game, $question)
                 break;
             case 'calc':
                 $result = Calc\game($name);
+                break;
+            case 'gcd':
+                $result = Gcd\game($name);
                 break;
         }
         if ($result['answer'] !== $result['correctAnswer']) {
