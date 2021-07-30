@@ -5,6 +5,7 @@ namespace Brain\Games\Games\Engine;
 use Brain\Games\Games\Even;
 use Brain\Games\Games\Calc;
 use Brain\Games\Games\Gcd;
+use Brain\Games\Games\Progression;
 
 use function cli\line;
 
@@ -21,6 +22,9 @@ function startGame($name, $game, $question)
                 break;
             case 'gcd':
                 $result = Gcd\game($name);
+                break;
+            case 'progression':
+                $result = Progression\game($name);
                 break;
         }
         if ($result['answer'] !== $result['correctAnswer']) {
