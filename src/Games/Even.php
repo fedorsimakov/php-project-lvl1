@@ -12,7 +12,7 @@ function game(string $name): array
     } else {
         $correctAnswer = 'no';
     }
-    $answer = prompt("Question: {$number}") ;
+    $answer = prompt("Question: {$number}");
     $result['correctAnswer'] = $correctAnswer;
     $result['answer'] = $answer;
     return $result;
