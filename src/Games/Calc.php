@@ -2,10 +2,11 @@
 
 namespace Brain\Games\Games\Calc;
 
-use function cli\prompt;
+use function cli\line;
 
-function game(string $name): array
+function game(string $name): int
 {
+    $correctAnswer = null;
     $operators = ['-', '+', '*'];
     $firstNumber = rand(1, 100);
     $secondNumber = rand(1, 100);
@@ -21,8 +22,6 @@ function game(string $name): array
             $correctAnswer = $firstNumber * $secondNumber;
             break;
     }
-    $answer = (int) prompt("Question: {$firstNumber} {$operators[$operatorIndex]} {$secondNumber}");
-    $result['correctAnswer'] = $correctAnswer;
-    $result['answer'] = $answer;
-    return $result;
+    line("Question: {$firstNumber} {$operators[$operatorIndex]} {$secondNumber}");
+    return $correctAnswer;
 }

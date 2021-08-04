@@ -9,30 +9,39 @@ use Brain\Games\Games\Progression;
 use Brain\Games\Games\Prime;
 
 use function cli\line;
+use function cli\prompt;
 
 function startGame($name, $game, $question)
 {
+    $answer = null;
+    $correctAnswer = null;
     line($question);
     for ($q = 0; $q < 3; $q++) {
         switch ($game) {
             case 'even':
-                $result = Even\game($name);
+                $correctAnswer = Even\game($name);
+                $answer = prompt("Your answer");
                 break;
             case 'calc':
-                $result = Calc\game($name);
+                $correctAnswer = Calc\game($name);
+                $answer = (int) prompt("Your answer");
                 break;
             case 'gcd':
-                $result = Gcd\game($name);
+                $correctAnswer = Gcd\game($name);
+                $answer = (int) prompt("Your answer");
                 break;
             case 'progression':
-                $result = Progression\game($name);
+                $correctAnswer = Progression\game($name);
+                $answer = (int) prompt("Your answer");
                 break;
             case 'prime':
-                $result = Prime\game($name);
+                $correctAnswer = Prime\game($name);
+                $answer = prompt("Your answer");
                 break;
         }
-        if ($result['answer'] !== $result['correctAnswer']) {
-            line("'{$result['answer']}' is wrong answer ;(. Correct answer was '{$result['correctAnswer']}'.");
+
+        if ($answer !== $correctAnswer) {
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
             line("Let's try again, %s!", $name);
             return;
         }

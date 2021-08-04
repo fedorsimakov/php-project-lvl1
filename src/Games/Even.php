@@ -2,18 +2,17 @@
 
 namespace Brain\Games\Games\Even;
 
-use function cli\prompt;
+use function cli\line;
 
-function game(string $name): array
+function game(string $name): string
 {
+    $correctAnswer = null;
     $number = rand(1, 100);
     if ($number % 2 === 0) {
         $correctAnswer = 'yes';
     } else {
         $correctAnswer = 'no';
     }
-    $answer = prompt("Question: {$number}");
-    $result['correctAnswer'] = $correctAnswer;
-    $result['answer'] = $answer;
-    return $result;
+    line("Question: {$number}");
+    return $correctAnswer;
 }

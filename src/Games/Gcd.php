@@ -2,11 +2,11 @@
 
 namespace Brain\Games\Games\Gcd;
 
-use function cli\prompt;
+use function cli\line;
 
-function game(string $name): array
+function game(string $name): int
 {
-    $gcd = null;
+    $correctAnswer = null;
     $firstNumber = rand(1, 100);
     $secondNumber = rand(1, 100);
     $remaindersOfDivision = [];
@@ -18,8 +18,6 @@ function game(string $name): array
         $i++;
     }
     $correctAnswer = $remaindersOfDivision[$i];
-    $answer = (int) prompt("Question: {$firstNumber} {$secondNumber}");
-    $result['correctAnswer'] = $correctAnswer;
-    $result['answer'] = $answer;
-    return $result;
+    line("Question: {$firstNumber} {$secondNumber}");
+    return $correctAnswer;
 }

@@ -2,10 +2,11 @@
 
 namespace Brain\Games\Games\Prime;
 
-use function cli\prompt;
+use function cli\line;
 
-function game(string $name): array
+function game(string $name): string
 {
+    $correctAnswer = null;
     $number = rand(2, 100);
     $correctAnswer = 'yes';
     for ($i = 2; $i <= round($number / 2, 0, PHP_ROUND_HALF_DOWN); $i++) {
@@ -13,8 +14,6 @@ function game(string $name): array
             $correctAnswer = 'no';
         }
     }
-    $answer = prompt("Question: {$number}") ;
-    $result['correctAnswer'] = $correctAnswer;
-    $result['answer'] = $answer;
-    return $result;
+    line("Question: {$number}");
+    return $correctAnswer;
 }

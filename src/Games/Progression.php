@@ -2,10 +2,11 @@
 
 namespace Brain\Games\Games\Progression;
 
-use function cli\prompt;
+use function cli\line;
 
-function game(string $name): array
+function game(string $name): int
 {
+    $correctAnswer = null;
     $progression = [];
     $progressionString = '';
     $a1 = rand(1, 20);
@@ -20,8 +21,6 @@ function game(string $name): array
         }
     }
     $correctAnswer = $progression[$emptyPosition];
-    $answer = (int) prompt("Question: {$progressionString}");
-    $result['correctAnswer'] = $correctAnswer;
-    $result['answer'] = $answer;
-    return $result;
+    line("Question: {$progressionString}");
+    return $correctAnswer;
 }
