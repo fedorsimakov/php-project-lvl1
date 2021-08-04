@@ -11,7 +11,7 @@ function game(string $name): array
     $a1 = rand(1, 20);
     $d = rand(1, 20);
     $emptyPosition = rand(0, 4);
-    for ($i = 0; $i < 5; $i++) {
+    for ($i = 0; $i < 10; $i++) {
         $progression[$i] = $a1 + $i * $d;
         if ($i === $emptyPosition) {
             $progressionString = "{$progressionString} ..";
