@@ -15,7 +15,7 @@ function game(string $name): int
         if ($i === $emptyPosition) {
             $correctAnswer = $a1 + $i * $d;
             $progression[$i] = "..";
-        } else {            
+        } else {
             $progression[$i] = $a1 + $i * $d;
         }
     }
