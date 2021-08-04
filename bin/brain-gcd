@@ -7,4 +7,4 @@ use Brain\Games\Cli;
 use Brain\Games\Games\Engine;
 
 $name = Cli\welcomeToGames();
-Engine\startGame($name, 'gcd', "Find the greatest common divisor of given numbers.");
+Engine\game($name, 'gcd', "Find the greatest common divisor of given numbers.");

@@ -7,4 +7,4 @@ use Brain\Games\Cli;
 use Brain\Games\Games\Engine;
 
 $name = Cli\welcomeToGames();
-Engine\startGame($name, 'progression', "What number is missing in the progression?");
+Engine\game($name, 'progression', "What number is missing in the progression?");

@@ -11,7 +11,7 @@ use Brain\Games\Games\Prime;
 use function cli\line;
 use function cli\prompt;
 
-function startGame($name, $game, $question)
+function game(string $name, string $game, string $question): bool
 {
     $answer = null;
     $correctAnswer = null;
@@ -43,9 +43,10 @@ function startGame($name, $game, $question)
         if ($answer !== $correctAnswer) {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
             line("Let's try again, %s!", $name);
-            return;
+            return false;
         }
         line("Correct!");
     }
     line("Congratulations, %s!", $name);
+    return true;
 }

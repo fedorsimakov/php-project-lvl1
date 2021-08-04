@@ -4,7 +4,7 @@ namespace Brain\Games\Games\Calc;
 
 use function cli\line;
 
-function game(string $name): int
+function game(string $name): ?int
 {
     $correctAnswer = null;
     $operators = ['-', '+', '*'];

@@ -7,4 +7,4 @@ use Brain\Games\Cli;
 use Brain\Games\Games\Engine;
 
 $name = Cli\welcomeToGames();
-Engine\startGame($name, 'even', "Answer \"yes\" if the number is even, otherwise answer \"no\".");
+Engine\game($name, 'even', "Answer \"yes\" if the number is even, otherwise answer \"no\".");
